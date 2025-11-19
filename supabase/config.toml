@@ -1,0 +1,13 @@
+project_id = "vsopcfktfmrihmrvgxrx"
+
+[functions.create-session]
+verify_jwt = false
+
+[functions.mark-attendance]  
+verify_jwt = false
+
+[functions.ai-learning]
+verify_jwt = false
+
+[functions.check-book-due-dates]
+verify_jwt = false

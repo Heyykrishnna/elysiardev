@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elysiar</title>
+    <meta name="description" content="Elysiar Project" />
+    <meta name="author" content="Yatharth" />
+    <link rel="icon" href="logo-Elysiar-circle.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Raleway", sans-serif;
+      }
+    </style>    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <meta property="og:title" content="Elysiar" />
+    <meta property="og:description" content="Transforming education through intelligent assessment technology." />
+    <meta property="og:type" content="website" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://www.shutterstock.com/image-vector/pile-books-vase-paper-pencil-600nw-1956723175.jpg" />
+    
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      function checkScreenSize() {
+        if (window.innerWidth < 600) { // 600px ~ smaller than laptop screens
+          document.body.innerHTML = `
+            <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;text-align:center;background:linear-gradient(135deg, #1a1a1a, #3b3b3b);color:#fff;font-family:'Raleway', sans-serif;padding:2rem;">
+              <h2 style="font-size:2rem;margin-bottom:1rem;">⚠️ Optimized for Larger Screens</h2>
+              <p style="max-width:600px;font-size:1.1rem;line-height:1.6;">
+                We’re sorry, but this website is best experienced on a laptop or a larger screen.
+                Some features may not display properly on smaller devices.
+              </p>
+              <p style="margin-top:1rem;opacity:0.8;">
+                🙏 Thank you for your understanding and we truly apologize for the inconvenience.
+              </p>
+            </div>
+          `;
+        }
+      }
+    
+      checkScreenSize();
+      window.addEventListener("resize", checkScreenSize);
+    </script>
+  </body>
+</html>
