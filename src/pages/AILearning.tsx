@@ -34,6 +34,18 @@ interface Resources {
   keyPoints: string[];
 }
 
+// Helper function to parse markdown-style bold text
+const parseMarkdownBold = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const boldText = part.slice(2, -2);
+      return <strong key={index}>{boldText}</strong>;
+    }
+    return <React.Fragment key={index}>{part}</React.Fragment>;
+  });
+};
+
 const AILearning = () => {
   const [showLoader, setShowLoader] = useState(true);
 
@@ -358,7 +370,7 @@ const AILearning = () => {
 
   return (
     <Layout>
-      <div className='bg-[#090607] min-h-screen'>
+      <div className='relative min-h-screen bg-black'>
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-9xl mx-auto space-y-8">
             <div className="mb-4">
@@ -626,7 +638,7 @@ const AILearning = () => {
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-6">
-                        <p className="whitespace-pre-wrap text-base leading-relaxed text-white/80">{resources.notes}</p>
+                        <p className="whitespace-pre-wrap text-base leading-relaxed text-white/80">{parseMarkdownBold(resources.notes)}</p>
                       </CardContent>
                     </Card>
 
@@ -667,7 +679,7 @@ const AILearning = () => {
                             {resources.subtopics.map((subtopic, idx) => (
                               <li key={idx} className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
                                 <span className="text-[#ac1ed6] text-xl font-bold">•</span>
-                                <span className="text-base text-white/80">{subtopic}</span>
+                                <span className="text-base text-white/80">{parseMarkdownBold(subtopic)}</span>
                               </li>
                             ))}
                           </ul>
@@ -686,7 +698,7 @@ const AILearning = () => {
                             {resources.tips.map((tip, idx) => (
                               <li key={idx} className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
                                 <span className="text-[#c26e73] text-xl font-bold">•</span>
-                                <span className="text-base text-white/80">{tip}</span>
+                                <span className="text-base text-white/80">{parseMarkdownBold(tip)}</span>
                               </li>
                             ))}
                           </ul>
@@ -708,7 +720,7 @@ const AILearning = () => {
                               <span className="text-white font-bold text-lg bg-[#ac1ed6]/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
                                 {idx + 1}
                               </span>
-                              <span className="text-base pt-1 text-white/80">{point}</span>
+                              <span className="text-base pt-1 text-white/80">{parseMarkdownBold(point)}</span>
                             </li>
                           ))}
                         </ul>
