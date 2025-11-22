@@ -344,10 +344,7 @@ const AILearning = () => {
 
   if (loading || showLoader) {
     return (
-      <div className="relative min-h-screen">
-        {/* Gradient Background with Blur */}
-        <div className="fixed inset-0 bg-gradient-to-br from-[#c084fc] via-[#f59e0b] to-[#c084fc] -z-10" />
-        <div className="fixed inset-0 backdrop-blur-3xl bg-black/30 -z-10" />
+      <div className="bg-black min-h-screen">
         <div className="container mx-auto p-6">
           <div className="flex items-center justify-center min-h-screen">
             <div className="text-center">
@@ -361,10 +358,7 @@ const AILearning = () => {
 
   return (
     <Layout>
-      <div className='relative min-h-screen'>
-        {/* Gradient Background with Blur */}
-        <div className="fixed inset-0 bg-gradient-to-br from-[#c084fc] via-[#f59e0b] to-[#c084fc] -z-10" />
-        <div className="fixed inset-0 backdrop-blur-3xl bg-black/30 -z-10" />
+      <div className='bg-[#090607] min-h-screen'>
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-9xl mx-auto space-y-8">
             <div className="mb-4">
